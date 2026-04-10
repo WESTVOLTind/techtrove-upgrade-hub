@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Mail, Send } from "lucide-react";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 const EmailCapture = () => {
   const [email, setEmail] = useState("");
@@ -10,16 +11,24 @@ const EmailCapture = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    const trimmedEmail = email.trim();
+    if (!trimmedEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmedEmail)) {
       toast.error("Please enter a valid email address");
       return;
     }
     setLoading(true);
-    // Simulate submission
-    await new Promise((r) => setTimeout(r, 800));
-    setSubmitted(true);
-    setLoading(false);
-    toast.success("You'll be the first to know when we're back!");
+    try {
+      const { error } = await supabase
+        .from("email_signups")
+        .insert({ email: trimmedEmail, name: name.trim() || null });
+      if (error) throw error;
+      setSubmitted(true);
+      toast.success("You'll be the first to know when we're back!");
+    } catch {
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {
