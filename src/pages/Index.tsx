@@ -29,8 +29,7 @@ const Index = () => {
         <section className="text-center mb-6">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-4">
             We're Upgrading Your{" "}
-            <span className="gradient-text text-glow">Tech Experience</span>{" "}
-            🚀
+            <span className="gradient-text text-glow">Tech Experience</span>
           </h1>
           <p className="text-muted-foreground text-base sm:text-lg max-w-lg mx-auto">
             Techtrove is currently undergoing a major upgrade to serve you better.
