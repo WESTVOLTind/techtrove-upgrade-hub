@@ -13,7 +13,7 @@ const ContactOptions = () => {
         Chat on WhatsApp
       </a>
       <a
-        href="tel:+1234567890"
+        href="tel:+254727795929"
         className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-secondary border border-border text-foreground hover:border-primary/40 hover:box-glow-sm transition-all text-sm font-medium"
       >
         <Phone className="w-4 h-4 text-primary" />
