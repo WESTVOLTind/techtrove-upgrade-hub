@@ -20,7 +20,7 @@ const ContactOptions = () => {
         Call Us
       </a>
       <a
-        href="mailto:support@techtrove.com"
+        href="mailto:info@techtrove.co.ke"
         className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-secondary border border-border text-foreground hover:border-primary/40 hover:box-glow-sm transition-all text-sm font-medium"
       >
         <Mail className="w-4 h-4 text-primary" />
