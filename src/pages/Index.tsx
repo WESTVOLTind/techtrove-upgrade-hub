@@ -96,7 +96,7 @@ const Index = () => {
         <footer className="mt-12 pt-6 border-t border-border w-full text-center">
           <p className="text-xs text-muted-foreground">
             Redeveloped by{" "}
-            <span className="font-semibold text-foreground">Westvolt Industries</span>
+            <a href="https://westvolt.nichesite.org" target="_blank" rel="noopener noreferrer" className="font-semibold text-foreground hover:text-primary transition-colors">Westvolt Industries</a>
           </p>
         </footer>
       </div>
